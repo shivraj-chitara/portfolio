@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Header({ header }) {
   const [nav, setNav] = useState(false);
@@ -10,10 +10,24 @@ function Header({ header }) {
   function hideNav() {
     setNav(false);
   }
+
+  useEffect(() => {
+    window.addEventListener("mouseup", function (event) {
+      var box = document.querySelector(".navbar");
+      if (
+        event.target != box &&
+        event.target.parentNode != box &&
+        event.target != document.querySelector(".hamburger") &&
+        event.target.parentNode != document.querySelector(".hamburger")
+      ) {
+        hideNav();
+      }
+    });
+  }, []);
   return (
     <header>
       <nav
-        className={`w-1/2 fixed right-0 top-0 bg-gray-800 h-screen md:h-auto md:bg-transparent md:w-full md:py-4 md:items-center flex flex-col items-center md:justify-evenly shadow-sm md:relative md:block ${
+        className={`w-1/2 fixed right-0 top-0 bg-gray-800 h-screen md:h-auto md:bg-transparent md:w-full md:py-4 md:items-center flex flex-col items-center md:justify-evenly shadow-sm md:relative md:block navbar ${
           !nav && "hidden"
         }`}
       >
@@ -47,14 +61,17 @@ function Header({ header }) {
         </div>
         <div className=" md:pr-10 md:absolute md:right-1/100 md:top-0 p-6">
           <a
-            href="#"
+            href={header.resumeLink}
             className=" inline-block font-source border border-indigo-400 text-sm font-semibold text-indigo-400  p-2 px-3 rounded-sm hover:bg-indigo-400 hover:text-gray-900"
           >
             Resume
           </a>
         </div>
       </nav>
-      <div className="w-full md:hidden flex justify-end p-5" onClick={showNav}>
+      <div
+        className="w-full md:hidden flex justify-end p-5 hamburger"
+        onClick={showNav}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

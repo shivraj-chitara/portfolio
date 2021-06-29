@@ -38,20 +38,17 @@ export default function Home() {
       <div className="w-full m-auto text-gray-400 z-20">
         {/* header */}
         <Header header={portfolioData.header} />
-
         {/* main page */}
         <Intro intro={portfolioData.intro} />
-
         {/* about me page */}
         <About about={portfolioData.about} />
-
         {/* Skills */}
         <Skills skills={portfolioData.skills} />
-
         {/* Experience */}
-        <Experience experience={portfolioData.experience} />
+        {portfolioData.experience && (
+          <Experience experience={portfolioData.experience} />
+        )}{" "}
         {/* project page */}
-
         <Projects projects={portfolioData.projects} />
         {/* contact page */}
         <Contact
