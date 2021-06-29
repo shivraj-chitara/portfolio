@@ -1,0 +1,97 @@
+{
+  "header": {
+    "headerLinks": ["About", "Skills", "Experience", "Projects", "Contact"]
+  },
+  "intro": {
+    "name": "Vinod Songara",
+    "introPara": "a full-stack developer and a graduate from IIT Roorkee. I'm passionate about writing code and exploring new technologies to solve real world problems. Currently I am looking for a full-time opportunity as full-stack/frond-end developer."
+  },
+  "about": {
+    "paras": [
+      "Hi, I am Vinod Sonagara, a JavaScript developer with a firm knowledge of React, Express, Redux, MongoDB and MySQL.",
+      "I have good a knowledge of frameworks and tools such as Webpack, npm, and Yarn and have experience working with RESTful API, GraphQL and JWT. I have good grasp of software architectural, low-level and high-level design.",
+      "I'm passionate about learning new technologies and am seeking to improve my skills."
+    ],
+    "imageLink": "/img/vinod.jpeg"
+  },
+  "skills": [
+    "Node.js",
+    "React",
+    "Express",
+    "Redux",
+    "JavaScript(ES6)",
+    "HTML",
+    "CSS",
+    "MongoDB",
+    "REST APIs",
+    "GraphQL",
+    "Git",
+    "GitHub",
+    "Webpack",
+    "npm",
+    "Yarn",
+    "Jest",
+    "Bootstrap",
+    "MaterialCSS"
+  ],
+  "experience": [
+    {
+      "year": "2020-21",
+      "title": "Backend Developer @SupplyCopia",
+      "points": [
+        "lorem fasfk jflas lkdfjlks djfkjsd sj",
+        "lorem fasfk jflas lkdfjlks djfkjsd sj",
+        "lorem fasfk jflas lkdfjlks djfkjsd sj"
+      ]
+    },
+    {
+      "year": "2019-21",
+      "title": "Developer @SupplyCopia",
+      "points": [
+        "lorem fasfk jflas lkdfjlks djfkjsd sj",
+        "lorem fasfk jflas lkdfjlks djfkjsd sj",
+        "lorem fasfk jflas lkdfjlks djfkjsd sj"
+      ]
+    },
+    {
+      "year": "2020-21",
+      "title": "Backend Developer @SupplyCopia",
+      "points": [
+        "lorem fasfk jflas lkdfjlks djfkjsd sj",
+        "lorem fasfk jflas lkdfjlks djfkjsd sj",
+        "lorem fasfk jflas lkdfjlks djfkjsd sj"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "File Browser App",
+      "detail": "A File Browser app to add, remove, or rename files/folders and travesal between different folders.",
+      "technologies": "React Redux Material CSS",
+      "links": {
+        "img": "/img/fileBrowser.png",
+        "github": "#",
+        "liveView": "#"
+      }
+    },
+    {
+      "title": "File Browser App",
+      "detail": "A File Browser app to add, remove, or rename files/folders and travesal between different folders.",
+      "technologies": "React Redux Material CSS",
+      "links": {
+        "img": "/img/fileBrowser.png",
+        "github": "#",
+        "liveView": "#"
+      }
+    }
+  ],
+  "contact": {
+    "detail": "vsonagara@ee.iitr.ac.in | (+91) 7060334254"
+  },
+  "universalLinks": {
+    "github": "#",
+    "linkedin": "#",
+    "twitter": "#",
+    "mail": "#"
+  }
+}
