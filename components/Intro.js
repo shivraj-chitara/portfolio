@@ -24,6 +24,15 @@ function Intro({ intro }) {
           Get in Touch
         </a>
       </div>
+
+      <style jsx>
+        {`
+          .btn-shadow:hover {
+            box-shadow: 0 0.5em 0.5em -0.4em #818cf8;
+            transform: translateY(-0.25em);
+          }
+        `}
+      </style>
     </section>
   );
 }

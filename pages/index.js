@@ -58,7 +58,7 @@ export default function Home() {
       </div>
 
       {/* footer */}
-      {/* <footer className="w-19/20 h-60 m-auto text-gray-400 hidden md:flex justify-between fixed bottom-0 left-1/40 z-0"> */}
+
       <div className="w-1/20 gap-5 hidden text-gray-400 md:flex flex-col justify-between items-center fixed bottom-0 left-1/40 ">
         <a
           href={portfolioData.universalLinks.github}
