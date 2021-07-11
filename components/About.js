@@ -1,8 +1,21 @@
 import React from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function About({ about }) {
+  useEffect(() => {
+    Aos.init({ duration: 800 });
+    Aos.init({ disable: "mobile" });
+  }, []);
   return (
-    <section className="w-full px-5 my-5 md:w-4/5 m-auto md:pt-16" id="about">
+    <section
+      className="w-full px-5 my-5 md:w-4/5 m-auto md:pt-16"
+      id="about"
+      data-aos="fade-up"
+      data-aos-once="true"
+      data-aos-duration="3000"
+    >
       <h1 className="text-2xl font-semibold text-white py-5 text-center md:text-3xl md:text-left md:flex md:items-center">
         😎 About me{" "}
         <span className="md:inline-block md:w-3/10 md:h-0.5 md:ml-5 md:bg-indigo-400"></span>

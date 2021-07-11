@@ -1,8 +1,21 @@
 import React from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function Skills({ skills }) {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+
+    Aos.init({ disable: "mobile" });
+  }, []);
   return (
-    <section className="w-full px-5 my-10 md:w-4/5 md:m-auto" id="skills">
+    <section
+      className="w-full px-5 my-10 md:w-4/5 md:m-auto"
+      id="skills"
+      data-aos="fade-up"
+      data-aos-once="true"
+    >
       <h1 className="text-2xl md:text-3xl font-semibold text-white py-5 text-center md:text-right md:flex md:items-center md:flex-row-reverse">
         👨‍💻 Skills{" "}
         <span className="md:inline-block md:w-3/10 md:h-0.5 md:mr-5 md:bg-indigo-400"></span>

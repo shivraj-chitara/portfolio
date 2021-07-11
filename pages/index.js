@@ -8,8 +8,37 @@ import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import portfolioData from "../portfolio-data.json";
+import { useEffect } from "react";
 
 export default function Home() {
+  function checkScrollDirection(event) {
+    let navbar = document.querySelector(".navbar");
+    if (checkScrollDirectionIsUp(event)) {
+      navbar.classList.remove("md:relative");
+      console.log(document.documentElement.scrollTop);
+      if (
+        document.body.scrollTop > 80 ||
+        document.documentElement.scrollTop > 80
+      ) {
+        navbar.classList.add("box-shadow");
+      } else {
+        navbar.classList.remove("box-shadow");
+      }
+    } else {
+      navbar.classList.add("md:relative");
+      navbar.classList.remove("box-shadow");
+    }
+  }
+
+  function checkScrollDirectionIsUp(event) {
+    if (event.wheelDelta) {
+      return event.wheelDelta > 0;
+    }
+    return event.deltaY < 0;
+  }
+  useEffect(() => {
+    window.addEventListener("wheel", checkScrollDirection);
+  }, []);
   return (
     <main
       className="bg-gray-900 w-full"

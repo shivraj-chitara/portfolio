@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { Link, animateScroll as scroll } from "react-scroll";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function Header({ header }) {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+    Aos.init({ disable: "mobile" });
+  }, []);
   const [nav, setNav] = useState(false);
 
   function showNav() {
@@ -24,10 +31,11 @@ function Header({ header }) {
       }
     });
   }, []);
+  let count = 2000;
   return (
     <header>
       <nav
-        className={`w-1/2 fixed right-0 top-0 bg-gray-800 h-screen md:h-auto md:bg-transparent md:w-full md:py-4 md:items-center flex flex-col items-center md:justify-evenly shadow-sm md:relative md:block navbar ${
+        className={`w-1/2 fixed right-0 top-0 bg-gray-800 md:bg-gray-900 h-screen md:h-auto   md:w-full md:py-4 md:items-center flex flex-col items-center md:justify-evenly shadow-sm md:block navbar z-50 md:relative ${
           !nav && "hidden"
         }`}
       >
@@ -49,20 +57,45 @@ function Header({ header }) {
           </div>
           <ul className="text-center md:pt-0 text-sm font-medium text-gray-400 font-source md:flex">
             {header.headerLinks.map((link, index) => {
+              console.log(count);
+              count -= 300;
               return (
-                <a href={`#${link.toLowerCase()}`} key={index}>
-                  <li className="p-6 md:px-7 md:py-2 md:hover:text-indigo-400">
+                // <a href={`#${link.toLowerCase()}`} key={index}>
+                //   <li className="p-6 md:px-7 md:py-2 md:hover:text-indigo-400">
+                //     {link}
+                //   </li>
+                // </a>
+                <li
+                  className="p-6 md:px-7 md:py-2 md:hover:text-indigo-400 cursor-pointer"
+                  data-aos="fade-down"
+                  data-aos-once="true"
+                  data-aos-duration={count}
+                >
+                  <Link
+                    activeClass="active"
+                    to={link.toLowerCase()}
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    key={index}
+                  >
                     {link}
-                  </li>
-                </a>
+                  </Link>
+                </li>
               );
             })}
           </ul>
         </div>
-        <div className=" md:pr-10 md:absolute md:right-1/100 md:top-0 p-6">
+        <div
+          className=" md:pr-10 md:absolute md:right-1/100 md:top-0 p-4"
+          data-aos="fade-down"
+          data-aos-once="true"
+          data-aos-duration="1000"
+        >
           <a
             href={header.resumeLink}
-            className=" inline-block font-source border border-indigo-400 text-sm font-semibold text-indigo-400  p-2 px-3 rounded-sm hover:bg-indigo-400 hover:text-gray-900"
+            className=" inline-block font-source border border-indigo-400 text-sm font-semibold text-indigo-400  p-2 px-3  rounded-sm hover:bg-indigo-400 hover:text-gray-900"
           >
             Resume
           </a>
@@ -88,6 +121,14 @@ function Header({ header }) {
           />
         </svg>
       </div>
+      <style jsx>
+        {`
+          .box-shadow {
+            box-shadow: rgb(62 67 72) 0px 2px 4px;
+          }
+          }
+        `}
+      </style>
     </header>
   );
 }
