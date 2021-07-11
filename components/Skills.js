@@ -6,6 +6,8 @@ import { useEffect } from "react";
 function Skills({ skills }) {
   useEffect(() => {
     Aos.init({ duration: 1000 });
+
+    Aos.init({ disable: "mobile" });
   }, []);
   return (
     <section

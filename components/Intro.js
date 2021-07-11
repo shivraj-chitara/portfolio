@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 function Intro({ intro }) {
   useEffect(() => {
-    // Aos.init({ duration: 100 });
+    Aos.init({ disable: "mobile" });
   }, []);
   return (
     <section

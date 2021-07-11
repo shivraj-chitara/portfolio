@@ -12,10 +12,21 @@ import { useEffect } from "react";
 
 export default function Home() {
   function checkScrollDirection(event) {
+    let navbar = document.querySelector(".navbar");
     if (checkScrollDirectionIsUp(event)) {
-      document.querySelector(".navbar").classList.remove("md:relative");
+      navbar.classList.remove("md:relative");
+      console.log(document.documentElement.scrollTop);
+      if (
+        document.body.scrollTop > 80 ||
+        document.documentElement.scrollTop > 80
+      ) {
+        navbar.classList.add("box-shadow");
+      } else {
+        navbar.classList.remove("box-shadow");
+      }
     } else {
-      document.querySelector(".navbar").classList.add("md:relative");
+      navbar.classList.add("md:relative");
+      navbar.classList.remove("box-shadow");
     }
   }
 

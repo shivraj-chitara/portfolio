@@ -6,6 +6,7 @@ import { useEffect } from "react";
 function Contact({ contact, links }) {
   useEffect(() => {
     Aos.init({ duration: 1000 });
+    Aos.init({ disable: "mobile" });
   }, []);
   return (
     <section

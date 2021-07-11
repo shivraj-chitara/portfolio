@@ -4,9 +4,10 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 
 function About({ about }) {
-  // useEffect(() => {
-  //   Aos.init({ duration: 800 });
-  // }, []);
+  useEffect(() => {
+    Aos.init({ duration: 800 });
+    Aos.init({ disable: "mobile" });
+  }, []);
   return (
     <section
       className="w-full px-5 my-5 md:w-4/5 m-auto md:pt-16"

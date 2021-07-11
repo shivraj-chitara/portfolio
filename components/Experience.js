@@ -5,6 +5,7 @@ import { useEffect } from "react";
 export default function Experience({ experience }) {
   useEffect(() => {
     Aos.init({ duration: 2000 });
+    Aos.init({ disable: "mobile" });
   }, []);
   return (
     <section

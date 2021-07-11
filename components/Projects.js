@@ -6,6 +6,7 @@ import { useEffect } from "react";
 function Projects({ projects }) {
   useEffect(() => {
     Aos.init({ duration: 1000 });
+    Aos.init({ disable: "mobile" });
   }, []);
   return (
     <section className="w-full px-5 md:w-4/5 md:m-auto" id="projects">
