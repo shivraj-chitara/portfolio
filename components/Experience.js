@@ -1,8 +1,17 @@
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 export default function Experience({ experience }) {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   return (
     <section
       className="w-full px-5 my-10 md:w-4/5 md:m-auto md:my-20"
       id="experience"
+      data-aos="fade-up"
+      data-aos-once="true"
     >
       <h1 className="text-2xl md:text-3xl md:text-left font-semibold text-white py-10 text-center md:flex md:items-center">
         👨‍🎓 Experience{" "}

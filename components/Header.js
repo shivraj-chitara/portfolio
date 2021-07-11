@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 function Header({ header }) {
   const [nav, setNav] = useState(false);
@@ -27,9 +28,12 @@ function Header({ header }) {
   return (
     <header>
       <nav
-        className={`w-1/2 fixed right-0 top-0 bg-gray-800 h-screen md:h-auto md:bg-transparent md:w-full md:py-4 md:items-center flex flex-col items-center md:justify-evenly shadow-sm md:relative md:block navbar ${
+        className={`w-1/2 fixed right-0 top-0 bg-gray-800 md:bg-gray-900 h-screen md:h-auto   md:w-full md:py-4 md:items-center flex flex-col items-center md:justify-evenly shadow-sm md:block navbar z-50 md:relative  ${
           !nav && "hidden"
         }`}
+        style={{
+          boxShadow: "rgb(62 67 72) 0px 2px 4px",
+        }}
       >
         <div className=" md:w-full md:flex md:justify-center">
           <div
@@ -50,19 +54,32 @@ function Header({ header }) {
           <ul className="text-center md:pt-0 text-sm font-medium text-gray-400 font-source md:flex">
             {header.headerLinks.map((link, index) => {
               return (
-                <a href={`#${link.toLowerCase()}`} key={index}>
-                  <li className="p-6 md:px-7 md:py-2 md:hover:text-indigo-400">
+                // <a href={`#${link.toLowerCase()}`} key={index}>
+                //   <li className="p-6 md:px-7 md:py-2 md:hover:text-indigo-400">
+                //     {link}
+                //   </li>
+                // </a>
+                <li className="p-6 md:px-7 md:py-2 md:hover:text-indigo-400 cursor-pointer">
+                  <Link
+                    activeClass="active"
+                    to={link.toLowerCase()}
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    key={index}
+                  >
                     {link}
-                  </li>
-                </a>
+                  </Link>
+                </li>
               );
             })}
           </ul>
         </div>
-        <div className=" md:pr-10 md:absolute md:right-1/100 md:top-0 p-6">
+        <div className=" md:pr-10 md:absolute md:right-1/100 md:top-0 p-4">
           <a
             href={header.resumeLink}
-            className=" inline-block font-source border border-indigo-400 text-sm font-semibold text-indigo-400  p-2 px-3 rounded-sm hover:bg-indigo-400 hover:text-gray-900"
+            className=" inline-block font-source border border-indigo-400 text-sm font-semibold text-indigo-400  p-2 px-3  rounded-sm hover:bg-indigo-400 hover:text-gray-900"
           >
             Resume
           </a>

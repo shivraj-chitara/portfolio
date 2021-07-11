@@ -1,21 +1,25 @@
 import React from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function Intro({ intro }) {
+  useEffect(() => {
+    // Aos.init({ duration: 100 });
+  }, []);
   return (
-    <section className="w-full md:w-2/5 md:ml-36">
+    <section
+      className="w-full md:w-3/5 md:ml-36 h-screen flex md:items-center md:pl-32 2xl:pl-64"
+      style={{
+        marginTop: "-1rem",
+      }}
+      data-aos="fade-up"
+      data-aos-once="true"
+      data-aos-duration="2000"
+    >
       <div className="w-full px-5 py-16">
         <p className="text-indigo-400 font-source text-lg">Hi, I am</p>
         <h1 className="text-white font-semibold text-4xl py-8">{intro.name}</h1>
-        {/* <p className="">
-          a {""}
-          <span className="text-indigo-400 font-semibold inline-block">
-            full-stack developer
-          </span>
-          {""} and a graduate from IIT Roorkee. I'm passionate about writing
-          code and exploring new technologies to solve real world problems.
-          Currently I am looking for a full-time opportunity as
-          full-stack/frond-end developer.
-        </p> */}
         <p>{intro.introPara}</p>
         <a
           href="#"

@@ -1,6 +1,12 @@
 import React from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function Projects({ projects }) {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <section className="w-full px-5 md:w-4/5 md:m-auto" id="projects">
       <h1 className="text-2xl  md:text-3xl text-center md:text-left pb-10 font-semibold text-white md:flex items-center flex-row-reverse ">
@@ -10,7 +16,11 @@ function Projects({ projects }) {
 
       {projects.map((project) => {
         return projects.indexOf(project) % 2 == 0 ? (
-          <div className="md:w-full md:flex md:items-center md:justify-around md:py-5">
+          <div
+            className="md:w-full md:flex md:items-center md:justify-around md:py-5"
+            data-aos="fade-up"
+            data-aos-once="true"
+          >
             {/*project img  */}
             <div className="hidden md:block w-9/20 md:transform md:translate-x-14">
               <img src={project.links.img} className="img-effect"></img>
@@ -65,7 +75,11 @@ function Projects({ projects }) {
             </div>
           </div>
         ) : (
-          <div className="md:w-full md:flex md:items-center flex-row-reverse md:justify-around md:py-5">
+          <div
+            className="md:w-full md:flex md:items-center flex-row-reverse md:justify-around md:py-5"
+            data-aos="fade-up"
+            data-aos-once="true"
+          >
             {/*project img  */}
             <div className="hidden md:block w-9/20 md:transform md:-translate-x-14">
               <img src={project.links.img} className="img-effect"></img>

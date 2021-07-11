@@ -1,10 +1,18 @@
 import React from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function Contact({ contact, links }) {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <section
       className="w-full px-5 text-center pb-28 pt-5 md:w-4/5 m-auto md:py-20 md:pb-28"
       id="contact"
+      data-aos="fade-up"
+      data-aos-once="true"
     >
       <h1 className="text-2xl md:text-3xl pb-10 font-semibold text-white py-5 text-center">
         ☎️ Contact Me
