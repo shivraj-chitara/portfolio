@@ -23,6 +23,7 @@ function Intro({ intro }) {
         <p>{intro.introPara}</p>
         <a
           href="#"
+          target="_blank"
           className=" inline-block font-source border border-indigo-400 text-sm text-indigo-400 mt-12 p-4 px-6 rounded-sm btn-shadow transition-all delay-75"
         >
           Get in Touch

@@ -24,7 +24,11 @@ function Contact({ contact, links }) {
       </p>
       <p className="pb-5">{contact.detail}</p>
       <div className="flex justify-evenly w-2/5 m-auto md:w-3/20">
-        <a href={links.github} className="hover:text-indigo-400">
+        <a
+          href={links.github}
+          target="_blank"
+          className="hover:text-indigo-400"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -37,7 +41,11 @@ function Contact({ contact, links }) {
           </svg>
         </a>
 
-        <a href={links.linkedin} className="hover:text-indigo-400">
+        <a
+          href={links.linkedin}
+          target="_blank"
+          className="hover:text-indigo-400"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -50,7 +58,11 @@ function Contact({ contact, links }) {
           </svg>
         </a>
 
-        <a href={links.twitter} className="hover:text-indigo-400">
+        <a
+          href={links.twitter}
+          target="_blank"
+          className="hover:text-indigo-400"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -66,6 +78,7 @@ function Contact({ contact, links }) {
 
       <a
         href="#"
+        target="_blank"
         className=" inline-block font-source border border-indigo-400 text-sm text-indigo-400 mt-10 p-4 px-6 rounded-sm btn-shadow transition-all delay-75"
       >
         Say Hi

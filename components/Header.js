@@ -95,6 +95,7 @@ function Header({ header }) {
         >
           <a
             href={header.resumeLink}
+            target="_blank"
             className=" inline-block font-source border border-indigo-400 text-sm font-semibold text-indigo-400  p-2 px-3  rounded-sm hover:bg-indigo-400 hover:text-gray-900"
           >
             Resume

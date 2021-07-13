@@ -91,6 +91,7 @@ export default function Home() {
       <div className="w-1/20 gap-5 hidden text-gray-400 md:flex flex-col justify-between items-center fixed bottom-0 left-1/40 ">
         <a
           href={portfolioData.universalLinks.github}
+          target="_blank"
           className="hover:text-indigo-400"
         >
           <svg
@@ -107,6 +108,7 @@ export default function Home() {
 
         <a
           href={portfolioData.universalLinks.linkedin}
+          target="_blank"
           className="hover:text-indigo-400"
         >
           <svg
@@ -123,6 +125,7 @@ export default function Home() {
 
         <a
           href={portfolioData.universalLinks.twitter}
+          target="_blank"
           className="hover:text-indigo-400"
         >
           <svg
@@ -142,6 +145,7 @@ export default function Home() {
       <div className="w-1/20 text-gray-400 h-60 hidden md:flex flex-col justify-between items-center fixed bottom-0 right-1/40">
         <a
           href={portfolioData.universalLinks.mail}
+          target="_blank"
           className="font-source transform rotate-90 hover:text-indigo-400 "
         >
           vksonagara@gmail.com

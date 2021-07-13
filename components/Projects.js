@@ -42,7 +42,7 @@ function Projects({ projects }) {
               </p>
               <div className="flex justify-end">
                 <div className="flex w-1/5 justify-between md:w-3/20 ">
-                  <a href={project.links.github}>
+                  <a href={project.links.github} target="_blank">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="25"
@@ -55,7 +55,7 @@ function Projects({ projects }) {
                     </svg>
                   </a>
 
-                  <a href={project.links.liveView}>
+                  <a href={project.links.liveView} target="_blank">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="h-7 w-7 hover:text-indigo-400"
@@ -101,7 +101,7 @@ function Projects({ projects }) {
               </p>
               <div className="">
                 <div className="flex w-1/5 justify-between md:w-3/20 ">
-                  <a href={project.links.github}>
+                  <a href={project.links.github} target="_blank">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="25"
@@ -114,7 +114,7 @@ function Projects({ projects }) {
                     </svg>
                   </a>
 
-                  <a href={project.links.liveView}>
+                  <a href={project.links.liveView} target="_blank">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="h-7 w-7 hover:text-indigo-400"
