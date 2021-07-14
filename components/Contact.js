@@ -77,7 +77,7 @@ function Contact({ contact, links }) {
       </div>
 
       <a
-        href="#"
+        href={links.linkedin}
         target="_blank"
         className=" inline-block font-source border border-indigo-400 text-sm text-indigo-400 mt-10 p-4 px-6 rounded-sm btn-shadow transition-all delay-75"
       >
