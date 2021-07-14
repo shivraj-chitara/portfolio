@@ -39,29 +39,35 @@ function Header({ header }) {
             {header.headerLinks.map((link, index) => {
               count -= 300;
               return (
-                <a href={`#${link.toLowerCase()}`} key={index}>
-                  <li className="p-6 md:px-7 md:py-2 md:hover:text-indigo-400">
-                    {link}
-                  </li>
-                </a>
-                // <li
-                //   className="p-6 md:px-7 md:py-2 md:hover:text-indigo-400 cursor-pointer"
+                // <a
+                //   href={`#${link.toLowerCase()}`}
+                //   key={index}
                 //   data-aos="fade-down"
                 //   data-aos-once="true"
                 //   data-aos-duration={count}
                 // >
-                //   <Link
-                //     activeClass="active"
-                //     to={link.toLowerCase()}
-                //     spy={true}
-                //     smooth={true}
-                //     offset={-70}
-                //     duration={500}
-                //     key={index}
-                //   >
+                //   <li className="p-6 md:px-7 md:py-2 md:hover:text-indigo-400">
                 //     {link}
-                //   </Link>
-                // </li>
+                //   </li>
+                // </a>
+                <li
+                  className="p-6 md:px-7 md:py-2 md:hover:text-indigo-400 cursor-pointer"
+                  data-aos="fade-down"
+                  data-aos-once="true"
+                  data-aos-duration={count}
+                >
+                  <Link
+                    activeClass="active"
+                    to={link.toLowerCase()}
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    key={index}
+                  >
+                    {link}
+                  </Link>
+                </li>
               );
             })}
           </ul>
