@@ -3,7 +3,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 
-function Intro({ intro }) {
+function Intro({ intro, links }) {
   useEffect(() => {
     Aos.init({ disable: "mobile" });
   }, []);
@@ -22,7 +22,7 @@ function Intro({ intro }) {
         <h1 className="text-white font-semibold text-4xl py-8">{intro.name}</h1>
         <p>{intro.introPara}</p>
         <a
-          href="#"
+          href={links.linkedin}
           target="_blank"
           className=" inline-block font-source border border-indigo-400 text-sm text-indigo-400 mt-12 p-4 px-6 rounded-sm btn-shadow transition-all delay-75"
         >

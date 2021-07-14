@@ -8,37 +8,9 @@ import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import portfolioData from "../portfolio-data.json";
-import { useEffect } from "react";
+import Script from "next/script";
 
 export default function Home() {
-  function checkScrollDirection(event) {
-    let navbar = document.querySelector(".navbar");
-    if (checkScrollDirectionIsUp(event)) {
-      navbar.classList.remove("md:relative");
-      console.log(document.documentElement.scrollTop);
-      if (
-        document.body.scrollTop > 80 ||
-        document.documentElement.scrollTop > 80
-      ) {
-        navbar.classList.add("box-shadow");
-      } else {
-        navbar.classList.remove("box-shadow");
-      }
-    } else {
-      navbar.classList.add("md:relative");
-      navbar.classList.remove("box-shadow");
-    }
-  }
-
-  function checkScrollDirectionIsUp(event) {
-    if (event.wheelDelta) {
-      return event.wheelDelta > 0;
-    }
-    return event.deltaY < 0;
-  }
-  useEffect(() => {
-    window.addEventListener("wheel", checkScrollDirection);
-  }, []);
   return (
     <main
       className="bg-gray-900 w-full"
@@ -68,7 +40,10 @@ export default function Home() {
         {/* header */}
         <Header header={portfolioData.header} />
         {/* main page */}
-        <Intro intro={portfolioData.intro} />
+        <Intro
+          intro={portfolioData.intro}
+          links={portfolioData.universalLinks}
+        />
         {/* about me page */}
         <About about={portfolioData.about} />
         {/* Skills */}
@@ -148,12 +123,21 @@ export default function Home() {
           target="_blank"
           className="font-source transform rotate-90 hover:text-indigo-400 "
         >
-          vksonagara@gmail.com
+          {portfolioData.universalLinks.email}
         </a>
 
         <div className="w-0.5 h-28 bg-gray-400"></div>
       </div>
       {/* </footer> */}
+
+      <style jsx>
+        {`
+          html {
+            scroll-behavior: smooth;
+          }
+        `}
+      </style>
+      <Script src="/main.js" strategy="lazyOnload" />
     </main>
   );
 }

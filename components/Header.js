@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import Script from "next/script";
 
 function Header({ header }) {
   useEffect(() => {
@@ -10,27 +11,6 @@ function Header({ header }) {
   }, []);
   const [nav, setNav] = useState(false);
 
-  function showNav() {
-    setNav(true);
-  }
-
-  function hideNav() {
-    setNav(false);
-  }
-
-  useEffect(() => {
-    window.addEventListener("mouseup", function (event) {
-      var box = document.querySelector(".navbar");
-      if (
-        event.target != box &&
-        event.target.parentNode != box &&
-        event.target != document.querySelector(".hamburger") &&
-        event.target.parentNode != document.querySelector(".hamburger")
-      ) {
-        hideNav();
-      }
-    });
-  }, []);
   let count = 2000;
   return (
     <header>
@@ -42,7 +22,7 @@ function Header({ header }) {
         <div className=" md:w-full md:flex md:justify-center">
           <div
             className="w-full md:hidden flex justify-end p-5"
-            onClick={hideNav}
+            onClick={() => hideNav(setNav)}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -57,32 +37,31 @@ function Header({ header }) {
           </div>
           <ul className="text-center md:pt-0 text-sm font-medium text-gray-400 font-source md:flex">
             {header.headerLinks.map((link, index) => {
-              console.log(count);
               count -= 300;
               return (
-                // <a href={`#${link.toLowerCase()}`} key={index}>
-                //   <li className="p-6 md:px-7 md:py-2 md:hover:text-indigo-400">
-                //     {link}
-                //   </li>
-                // </a>
-                <li
-                  className="p-6 md:px-7 md:py-2 md:hover:text-indigo-400 cursor-pointer"
-                  data-aos="fade-down"
-                  data-aos-once="true"
-                  data-aos-duration={count}
-                >
-                  <Link
-                    activeClass="active"
-                    to={link.toLowerCase()}
-                    spy={true}
-                    smooth={true}
-                    offset={-70}
-                    duration={500}
-                    key={index}
-                  >
+                <a href={`#${link.toLowerCase()}`} key={index}>
+                  <li className="p-6 md:px-7 md:py-2 md:hover:text-indigo-400">
                     {link}
-                  </Link>
-                </li>
+                  </li>
+                </a>
+                // <li
+                //   className="p-6 md:px-7 md:py-2 md:hover:text-indigo-400 cursor-pointer"
+                //   data-aos="fade-down"
+                //   data-aos-once="true"
+                //   data-aos-duration={count}
+                // >
+                //   <Link
+                //     activeClass="active"
+                //     to={link.toLowerCase()}
+                //     spy={true}
+                //     smooth={true}
+                //     offset={-70}
+                //     duration={500}
+                //     key={index}
+                //   >
+                //     {link}
+                //   </Link>
+                // </li>
               );
             })}
           </ul>
@@ -104,7 +83,7 @@ function Header({ header }) {
       </nav>
       <div
         className="w-full md:hidden flex justify-end p-5 hamburger"
-        onClick={showNav}
+        onClick={() => showNav(setNav)}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -130,6 +109,7 @@ function Header({ header }) {
           }
         `}
       </style>
+      <Script src="/main.js" strategy="lazyOnload" />
     </header>
   );
 }
